@@ -19,7 +19,7 @@ jobs:
       uses: education/autograding-command-grader@v1
       with:
         test-name: "pytest"
-        setup-command: "pip install pytest; sed -i 's/addopts =/& --doctest-modules --doctest-continue-on-failure/' >> pytest.ini"
+        setup-command: "pip install pytest; sed -i 's/addopts =/& --doctest-modules --doctest-continue-on-failure/' pytest.ini"
         timeout: 1
         max-score: 1
         command: "pytest"
