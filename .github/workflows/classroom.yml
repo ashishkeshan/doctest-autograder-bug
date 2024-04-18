@@ -19,7 +19,7 @@ jobs:
       uses: education/autograding-command-grader@v1
       with:
         test-name: "pytest"
-        setup-command: "echo 'addopts = [pytest]\naddopts = --color=yes --doctest-modules --doctest-continue-on-failure\nfaulthandler_timeout = 5' >> pytest.ini"
+        setup-command: "pip install pytest; echo 'addopts = [pytest]\naddopts = --color=yes --doctest-modules --doctest-continue-on-failure\nfaulthandler_timeout = 5' >> pytest.ini"
         timeout: 1
         max-score: 1
         command: "pytest"
