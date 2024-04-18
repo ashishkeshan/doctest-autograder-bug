@@ -16,11 +16,13 @@ jobs:
       uses: actions/checkout@v4
     - name: pytest
       id: pytest
-      uses: education/autograding-python-grader@v1
+      uses: education/autograding-command-grader@v1
       with:
+        test-name: "pytest"
+        setup-command: "echo addopts = [pytest]\naddopts = --color=yes --doctest-modules --doctest-continue-on-failure\nfaulthandler_timeout = 5"
         timeout: 1
         max-score: 1
-        setup-command: 'sed -i "s/addopts =/& --doctest-modules --doctest-continue-on-failure/" pytest.ini'
+        command: "pytest"
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
       env:
